@@ -110,5 +110,10 @@ cargo run --example client
 ```
 ![Installation Step 24](screens/24.png)
 
+Test the updated program by running the cargo test-sbf command.
+```bash
+cargo test-sbf
+```
+![Installation Step 17](screens/17.png)
 
 
