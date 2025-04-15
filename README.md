@@ -1,4 +1,5 @@
 # Solana-Setup-Hello-World-Deployment
+## by Tamyzgazina Ulzhan(SE-2325) & Bassanova Nurgul(SE-2323)
 
 This assignment demonstrates:
 1. Successful installation of Solana toolchain
@@ -116,4 +117,10 @@ cargo test-sbf
 ```
 ![Installation Step 17](screens/17.png)
 
+To close a program, use run the following command.
+```bash
+solana program close DaoRsAj2MJ4ehQukECn5g4NTDV3wbFoYZX8hErdMUBY7
+--bypass-warning
+```
+![Installation Step 17](screens/25.png)
 
