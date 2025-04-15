@@ -1,0 +1,19 @@
+[package]
+name = "hello_world"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+solana-program = "1.18.26"
+
+[lib]
+crate-type = ["cdylib", "lib"]
+
+[dev-dependencies]
+solana-program-test = "1.18.26"
+solana-sdk = "1.18.26"
+tokio = "1.44.2"
+anchor-lang = "0.29.0"
+
+[features]
+idl-build = ["anchor-lang/idl-build"]
