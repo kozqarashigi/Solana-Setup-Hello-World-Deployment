@@ -48,9 +48,67 @@ solana address
 
 ### Anchor CLI Basics
 ### Initialize Project
-![Installation Step 6](screens/6.png) 
-### Build program
 ![Installation Step 7](screens/7.png) 
-### Deploy program
+### Build program
 ![Installation Step 8](screens/8.png) 
+### Deploy program
+![Installation Step 9](screens/9.png) 
+
+## Part 2: Developing Programs in Rust
+### Create a new Program
+![Installation Step 10](screens/10.png) 
+Cargo.toml file should look like the following:
+![Installation Step 11](screens/11.png) 
+Replaced the contents of src/lib.rs with the following code. 
+![Installation Step 12](screens/12.png) 
+
+### Build the Program
+![Installation Step 13](screens/13.png) 
+
+To view the program ID, run the following command in your terminal. This command prints the public key of the keypair at the specified file path:
+![Installation Step 14](screens/14.png) 
+
+### Test the Program
+![Installation Step 15](screens/15.png) 
+
+Add the following test to src/lib.rs, below the program code. This is a test module that invokes the hello world program.
+![Installation Step 16](screens/16.png)
+
+ ### Deploy the Program
+ First, configure the Solana CLI to use the local Solana cluster.
+```bash
+solana config set -ul
+```
+![Installation Step 18](screens/18.png)
+
+Open a new terminal and run the solana-test-validators command to start the local validator.
+```bash
+solana-test-validator
+```
+While the test validator is running, run the solana program deploy command in a separate terminal to deploy the program to the local validator.
+```bash
+solana program deploy ./target/deploy/hello_world.so
+```
+![Installation Step 19](screens/19.png)
+
+### Invoke the Program
+First create an examples directory and a client.rs file.
+![Installation Step 21](screens/21.png)
+
+Add the following to Cargo.toml.
+![Installation Step 20](screens/20.png)
+
+Add the following code to examples/client.rs. This is a Rust client script that funds a new keypair to pay for transaction fees and then invokes the hello world program.
+![Installation Step 22](screens/22.png)
+
+Add the solana-client dependency.
+![Installation Step 23](screens/23.png)
+
+Run the client script with the following command.
+```bash
+cargo run --example client
+```
+![Installation Step 24](screens/24.png)
+
+
 
